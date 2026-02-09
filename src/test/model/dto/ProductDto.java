@@ -9,7 +9,7 @@ public class ProductDto {
     private String ppw;
     private String pphone;
 
-    public ProductDto(int pno, String pnick, int pprice, String ppw, String pphone) {
+    public ProductDto(int pno, String pnick, String pname, String pcomment, int pprice, String ppw, String pphone) {
         this.pno = pno;
         this.pnick = pnick;
         this.pname = pname;

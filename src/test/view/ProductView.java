@@ -62,11 +62,13 @@ public class ProductView {
     }
 
     public void update(){
+        if(ppw.equals(ppw))
         System.out.println("수정할 게시물 번호"); int pno=scan.nextInt();
         scan.nextLine();
         System.out.println("수정할 물품명"); String pname=scan.nextLine();
         System.out.println("수정할 설명"); String pcomment=scan.nextLine();
         System.out.println("수정할 가격"); int pprice=scan.nextInt();
+        scan.nextLine();
         System.out.println("수정할 연락처"); String pphone=scan.nextLine();
         boolean result=pc.update(pname, pcomment, pprice, pphone);
         if(result){

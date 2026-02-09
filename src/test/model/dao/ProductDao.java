@@ -24,7 +24,7 @@ public class ProductDao {
 
     public boolean create(String pnick, String pname, String pcomment, int pprice, String ppw, String pphone){
         try {
-            String sql = "insert into board(pnick,pname,comment,pprice,ppw,pphone) values(?,?,?,?,?,?)";
+            String sql = "insert into product(pnick,pname,pcomment,pprice,ppw,pphone) values(?,?,?,?,?,?)";
             PreparedStatement ps=conn.prepareStatement(sql);
             ps.setString(1,pnick);
             ps.setString(2,pname);
@@ -43,16 +43,18 @@ public class ProductDao {
     public ArrayList<ProductDto> read() {
         ArrayList<ProductDto> products = new ArrayList<>();
         try {
-            String sql = "select*from board";
+            String sql = "select*from product";
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 int pno = rs.getInt("pno");
+                String pnick= rs.getString("pnick");
                 String pname = rs.getString("pname");
+                String pcomment = rs.getString("pcomment");
                 int pprice = rs.getInt("pprice");
-                String pnick = rs.getString("pnick");
+                String ppw = rs.getString("ppw");
                 String pphone = rs.getString("pphone");
-                ProductDto productDto = new ProductDto(pno, pname, pprice, pnick, pphone);
+                ProductDto productDto=new ProductDto(pno,pnick,pname,pcomment,pprice,ppw,pphone);
                 products.add(productDto);
             }
         } catch (SQLException e) {
@@ -63,7 +65,7 @@ public class ProductDao {
 
     public boolean update(String pname, String pcomment, int pprice, String pphone){
         try{
-            String sql="update board set bcontent=?where bno=?";
+            String sql="update product set pname = ?, pcomment = ?, pprice = ? where pphone = ?";
             PreparedStatement ps=conn.prepareStatement(sql);
             ps.setString(1, pname);
             ps.setString(2, pcomment);
@@ -79,7 +81,7 @@ public class ProductDao {
 
     public boolean delete(int pno){
         try {
-            String sql = "delete from board where bno=?";
+            String sql = "delete from product where pno=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,pno);
             int count=ps.executeUpdate();
