@@ -62,7 +62,6 @@ public class ProductView {
     }
 
     public void update(){
-        if(ppw.equals(ppw))
         System.out.println("수정할 게시물 번호"); int pno=scan.nextInt();
         scan.nextLine();
         System.out.println("수정할 물품명"); String pname=scan.nextLine();
