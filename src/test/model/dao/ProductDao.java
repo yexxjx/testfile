@@ -3,6 +3,7 @@ package test.model.dao;
 import test.model.dto.ProductDto;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ProductDao {
@@ -54,7 +55,7 @@ public class ProductDao {
                 int pprice = rs.getInt("pprice");
                 String ppw = rs.getString("ppw");
                 String pphone = rs.getString("pphone");
-                String pdate=rs.getString(("pdate"));
+                LocalDateTime pdate = rs.getObject("pdate", LocalDateTime.class);
                 ProductDto productDto=new ProductDto(pno,pnick,pname,pcomment,pprice,ppw,pphone,pdate);
                 products.add(productDto);
             }

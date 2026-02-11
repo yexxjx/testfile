@@ -1,5 +1,7 @@
 package test.model.dto;
 
+import java.time.LocalDateTime;
+
 public class ProductDto {
     private int pno;
     private String pnick;
@@ -8,9 +10,9 @@ public class ProductDto {
     private int pprice;
     private String ppw;
     private String pphone;
-    private String pdate;
+    private LocalDateTime pdate;
 
-    public ProductDto(int pno, String pnick, String pname, String pcomment, int pprice, String ppw, String pphone, String pdate) {
+    public ProductDto(int pno, String pnick, String pname, String pcomment, int pprice, String ppw, String pphone, LocalDateTime pdate) {
         this.pno = pno;
         this.pnick = pnick;
         this.pname = pname;
@@ -77,11 +79,11 @@ public class ProductDto {
         this.pphone = pphone;
     }
 
-    public String getPdate() {
+    public LocalDateTime getPdate() {
         return pdate;
     }
 
-    public void setPdate(String pdate) {
+    public void setPdate(LocalDateTime pdate) {
         this.pdate = pdate;
     }
 
@@ -95,7 +97,7 @@ public class ProductDto {
                 ", pprice=" + pprice +
                 ", ppw='" + ppw + '\'' +
                 ", pphone='" + pphone + '\'' +
-                ", pdate='" + pdate + '\'' +
+                ", pdate=" + pdate +
                 '}';
     }
 }
