@@ -8,8 +8,9 @@ public class ProductDto {
     private int pprice;
     private String ppw;
     private String pphone;
+    private String pdate;
 
-    public ProductDto(int pno, String pnick, String pname, String pcomment, int pprice, String ppw, String pphone) {
+    public ProductDto(int pno, String pnick, String pname, String pcomment, int pprice, String ppw, String pphone, String pdate) {
         this.pno = pno;
         this.pnick = pnick;
         this.pname = pname;
@@ -17,6 +18,7 @@ public class ProductDto {
         this.pprice = pprice;
         this.ppw = ppw;
         this.pphone = pphone;
+        this.pdate = pdate;
     }
 
     public int getPno() {
@@ -75,6 +77,14 @@ public class ProductDto {
         this.pphone = pphone;
     }
 
+    public String getPdate() {
+        return pdate;
+    }
+
+    public void setPdate(String pdate) {
+        this.pdate = pdate;
+    }
+
     @Override
     public String toString() {
         return "ProductDto{" +
@@ -85,6 +95,7 @@ public class ProductDto {
                 ", pprice=" + pprice +
                 ", ppw='" + ppw + '\'' +
                 ", pphone='" + pphone + '\'' +
+                ", pdate='" + pdate + '\'' +
                 '}';
     }
 }

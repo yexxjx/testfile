@@ -54,7 +54,8 @@ public class ProductDao {
                 int pprice = rs.getInt("pprice");
                 String ppw = rs.getString("ppw");
                 String pphone = rs.getString("pphone");
-                ProductDto productDto=new ProductDto(pno,pnick,pname,pcomment,pprice,ppw,pphone);
+                String pdate=rs.getString(("pdate"));
+                ProductDto productDto=new ProductDto(pno,pnick,pname,pcomment,pprice,ppw,pphone,pdate);
                 products.add(productDto);
             }
         } catch (SQLException e) {

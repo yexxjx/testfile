@@ -56,8 +56,8 @@ public class ProductView {
         ArrayList<ProductDto> productDtos=pc.read();
         for(int index=0; index<=productDtos.size()-1; index++){
             ProductDto productDto=productDtos.get(index);
-            System.out.printf("물품 번호:%d, 물품명: %s, 물품 가격: %d, 닉네임: %s, 연락처: %s \n",
-                    productDto.getPno(), productDto.getPname(), productDto.getPprice(), productDto.getPnick(), productDto.getPphone() );
+            System.out.printf("물품 번호:%d, 물품명: %s, 물품 가격: %d, 닉네임: %s, 등록일: %s, 연락처: %s \n",
+                    productDto.getPno(), productDto.getPname(), productDto.getPprice(), productDto.getPnick(), productDto.getPdate(), productDto.getPphone() );
         }
     }
 
