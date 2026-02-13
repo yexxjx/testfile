@@ -87,8 +87,7 @@ public class ProductDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,pno);
             int count=ps.executeUpdate();
-            if(count==1){return true;}
-            else{return false;}
+            if(count==1) return true;
         }catch(SQLException e){
             System.out.println("[시스템오류] SQL 문법 문제 발생"+e);
         } return false;
